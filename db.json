@@ -1,14 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "c67b",
-      "name": "",
-      "budget": "",
-      "category": "",
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
