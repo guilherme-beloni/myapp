@@ -32,19 +32,48 @@ function Projects() {
   }, []);
 
   function removeProject(id) {
-    fetch(`http://localhost:5000/projects/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setProjects(projects.filter((project) => project.id !== id));
-        setProjectMessage("Projeto removido com sucesso!");
+    // Exibe um alerta de confirmação antes de excluir o projeto
+    const confirmDelete = window.confirm("Deseja excluir este projeto?");
+
+    if (confirmDelete) {
+      fetch(`http://localhost:5000/projects/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .catch((err) => console.log(err));
+        .then((resp) => resp.json())
+        .then(() => {
+          setProjects(projects.filter((project) => project.id !== id));
+          setProjectMessage("Projeto removido com sucesso!");
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // O usuário cancelou a exclusão
+      console.log("Exclusão cancelada pelo usuário.");
+    }
   }
+
+  /*const excluirEndereco = () => {
+    Alert.alert('Mensagem', 'Deseja realmente excluir esse endereço?', [
+      {
+        text: 'Sim',
+        onPress: () => {
+          try {
+            firebase.database().ref('dbEndereco').child(key).remove();
+            alert('Registro excluído com sucesso!');
+            cancelar();
+          } catch (e) {
+            alert('Erro ao excluir!');
+          }
+        },
+      },
+      {
+        text: 'Não',
+        onPress: () => cancelar(),
+      },
+    ]);
+  };*/
   return (
     <div className={styles.project_container}>
       <div className={styles.title_container}>
