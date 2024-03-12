@@ -10,6 +10,17 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "0f73",
+      "name": "sdas",
+      "budget": "321",
+      "category": {
+        "id": "2",
+        "name": "Front-end"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [

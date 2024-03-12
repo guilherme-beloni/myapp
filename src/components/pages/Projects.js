@@ -54,26 +54,6 @@ function Projects() {
     }
   }
 
-  /*const excluirEndereco = () => {
-    Alert.alert('Mensagem', 'Deseja realmente excluir esse endereço?', [
-      {
-        text: 'Sim',
-        onPress: () => {
-          try {
-            firebase.database().ref('dbEndereco').child(key).remove();
-            alert('Registro excluído com sucesso!');
-            cancelar();
-          } catch (e) {
-            alert('Erro ao excluir!');
-          }
-        },
-      },
-      {
-        text: 'Não',
-        onPress: () => cancelar(),
-      },
-    ]);
-  };*/
   return (
     <div className={styles.project_container}>
       <div className={styles.title_container}>

@@ -4,6 +4,7 @@ import Company from "./components/pages/Company";
 import Contact from "./components/pages/Contact";
 import NewProject from "./components/pages/NewProject";
 import Projects from "./components/pages/Projects";
+import Project from "./components/pages/Project";
 
 import Navbar from "./components/layout/Navbar";
 import Container from "./components/layout/Container";
@@ -56,6 +57,15 @@ function App() {
           element={
             <Container customClass="min-height">
               <NewProject />
+            </Container>
+          }
+        />
+        <Route
+          exact
+          path="/project/:id"
+          element={
+            <Container customClass="min-height">
+              <Project />
             </Container>
           }
         />
